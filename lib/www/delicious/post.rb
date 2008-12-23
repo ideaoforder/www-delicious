@@ -4,10 +4,10 @@
 # Ruby client for del.icio.us API.
 # 
 #
-# Category::    WWW
-# Package::     WWW::Delicious
-# Author::      Simone Carletti <weppos@weppos.net>
-# License::     MIT License
+# Category::   WWW
+# Package::    WWW::Delicious
+# Subpackage:: WWW::Delicious::Post
+# Author::     Simone Carletti <weppos@weppos.net>
 #
 #--
 # SVN: $Id$
@@ -63,10 +63,10 @@ module WWW
       # Returns a params-style representation suitable for API calls.
       def to_params()
         params = {}
-        params[:url]          = url
+        params[:url]          = url # this could/should convert back from URI object (MD)
         params[:description]  = title
         params[:extended]     = notes if notes
-        params[:shared]       = shared
+        params[:shared]       = 'no' if !shared # (MD)
         params[:tags]         = tags.join(' ') if tags.respond_to? :join
         params[:replace]      = replace
         params[:dt]           = WWW::Delicious::TIME_CONVERTER.call(time) if time
@@ -104,7 +104,7 @@ module WWW
         def from_rexml(element)
           raise ArgumentError, "`element` expected to be a `REXML::Element`" unless element.kind_of? REXML::Element
           self.new do |instance|
-            instance.url    = element.if_attribute_value(:href) { |v| URI.parse(v) }
+            instance.url    = element.if_attribute_value(:href) #{ |v| URI.parse(v) } - this was breaking a lot of the API calls (MD)
             instance.title  = element.if_attribute_value(:description)
             instance.notes  = element.if_attribute_value(:extended)
             instance.others = element.if_attribute_value(:others).to_i # cast nil to 0
