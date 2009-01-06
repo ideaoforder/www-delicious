@@ -1,6 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "www-delicious"
   s.version  = "0.2.0"
+  s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.date     = "2008-08-11"
   s.summary  = "Ruby client for del.icio.us API."
   s.email    = "weppos@weppos.net"
@@ -67,8 +68,7 @@ Gem::Specification.new do |s|
       "lib/www/delicious/version.rb",
       "lib/www/delicious.rb",
       "README.rdoc"]
-    # s.add_dependency("rubygems", [">= 1.2.0"])
-    # s.add_dependency("rake", [">= 0.8.0"])
-    # s.add_dependency("echoe", [">= 3.0.0"])
-    # s.add_dependency("mocha", [">= 0.9.0"])
+    s.add_dependency("rake", [">= 0.8.0"])
+    s.add_dependency("echoe", [">= 3.0.0"])
+    s.add_dependency("mocha", [">= 0.9.0"])
   end
