@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
       "test/unit/online/online_test.rb", 
       "test/unit/post_test.rb", 
       "test/unit/tag_test.rb"]
-    s.rdoc_options = ["--main", "README.rdoc", "line-numbers", "--inline-source", "--title", "Www-delicious"]
+    s.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--title", "Www-delicious"]
     s.extra_rdoc_files = ["CHANGELOG.rdoc",
       "lib/www/delicious/bundle.rb",
       "lib/www/delicious/element.rb",
