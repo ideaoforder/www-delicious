@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary  = "Ruby client for del.icio.us API."
   s.email    = "weppos@weppos.net"
   s.homepage = "http://code.simonecarletti.com/www-delicious"
-  s.description = "WWW::Delicious is a del.icio.us API client implemented in Ruby.     It provides access to all available del.icio.us API queries and returns the original XML response as a friendly Ruby object."
+  s.description = "WWW::Delicious is a del.icio.us API client implemented in Ruby. It provides access to all available del.icio.us API queries and returns the original XML response as a friendly Ruby object."
   s.has_rdoc = true
   s.authors  = ["Simone Carletti"]
     s.files    = ["CHANGELOG.rdoc", 
@@ -67,6 +67,7 @@ Gem::Specification.new do |s|
       "lib/www/delicious/version.rb",
       "lib/www/delicious.rb",
       "README.rdoc"]
+    s.add_dependency("rubygems", [">= 1.2.0"])
     s.add_dependency("rake", [">= 0.8.0"])
     s.add_dependency("echoe", [">= 3.0.0"])
     s.add_dependency("mocha", [">= 0.9.0"])
