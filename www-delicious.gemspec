@@ -67,8 +67,8 @@ Gem::Specification.new do |s|
       "lib/www/delicious/version.rb",
       "lib/www/delicious.rb",
       "README.rdoc"]
-    s.add_dependency("rubygems", [">= 1.2.0"])
-    s.add_dependency("rake", [">= 0.8.0"])
-    s.add_dependency("echoe", [">= 3.0.0"])
-    s.add_dependency("mocha", [">= 0.9.0"])
+    # s.add_dependency("rubygems", [">= 1.2.0"])
+    # s.add_dependency("rake", [">= 0.8.0"])
+    # s.add_dependency("echoe", [">= 3.0.0"])
+    # s.add_dependency("mocha", [">= 0.9.0"])
   end
