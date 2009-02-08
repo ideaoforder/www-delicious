@@ -14,6 +14,7 @@
 #++
 
 
+require 'rubygems'
 require 'net/https'
 require 'rexml/document'
 require 'time'

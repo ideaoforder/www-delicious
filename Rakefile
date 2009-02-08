@@ -38,7 +38,7 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.rdoc_pattern  = /^(lib|CHANGELOG.rdoc|README.rdoc)/
 
   p.development_dependencies += ["rake  >=0.8",
-                                 "echoe >=3",
+                                 "echoe >=3.0",
                                  "mocha >=0.9"]
 end
 
