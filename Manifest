@@ -1,4 +1,3 @@
-pp
 lib/www/delicious/bundle.rb
 lib/www/delicious/tag.rb
 lib/www/delicious/element.rb
@@ -43,5 +42,7 @@ Manifest
 Rakefile
 LICENSE.rdoc
 CHANGELOG.rdoc
+www-delicious.gemspec
 setup.rb
 README.rdoc
+init.rb
