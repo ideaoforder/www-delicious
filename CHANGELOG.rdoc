@@ -3,8 +3,14 @@
 
 == development
 
+* FIXED: Compatibility fixes for Ruby 1.9. WWW::Delicious is now 100% compatible with 1.9. You should remember to define the proper content encoding with magic comments when working with UTF-8/MultiByte XML or Ruby files, see http://redmine.ruby-lang.org/wiki/ruby-19/ScriptEncoding (closes #142).
+
 * CHANGED: Don't use File.dirname(__FILE__) in require statement to prevent recursive inclusions.
 
+== Release 0.2.1 by Luca G.Soave
+
+* ADDED: plugin install ability : ruby ./script/plugin install git://github.com/lgs/www-delicious.git 
+* FIXED: Error installing ideaoforder-www-delicious gem : ideaoforder-www-delicious requires RubyGems version = 1.2
 
 == Release 0.2.0
 

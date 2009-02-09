@@ -1,18 +1,18 @@
 require 'rubygems'
+require 'rake'
 require 'echoe'
 
-$LOAD_PATH.unshift(File.dirname(__FILE__) + "/lib")
+$:.unshift(File.dirname(__FILE__) + "/lib")
 require 'www/delicious'
 
 
 # Common package properties
-PKG_NAME = ENV['PKG_NAME'] || WWW::Delicious::GEM
+PKG_NAME    = ENV['PKG_NAME'] || WWW::Delicious::GEM
 PKG_VERSION = ENV['PKG_VERSION'] || WWW::Delicious::VERSION
 PKG_SUMMARY = "Ruby client for del.icio.us API."
-PKG_FILES = FileList.new("{lib,test}/**/*.rb") do |fl|
-  fl.exclude 'TODO'
-  fl.include %w(README.rdoc CHANGELOG.rdoc LICENSE.rdoc)
-  fl.include %w(Rakefile setup.rb)
+PKG_FILES = FileList.new("{lib,test}/**/*.rb") do |files|
+  files.include %w(README.rdoc CHANGELOG.rdoc LICENSE.rdoc)
+  files.include %w(Rakefile setup.rb)
 end
 RUBYFORGE_PROJECT = 'www-delicious'
  
@@ -34,12 +34,12 @@ Echoe.new(PKG_NAME, PKG_VERSION) do |p|
   p.project       = RUBYFORGE_PROJECT
 
   p.need_zip      = true
-  p.rcov_options  = ["-x Rakefile -x mocha -x rcov"]
+  p.rcov_options  = ["--main << README.rdoc -x Rakefile -x mocha -x rcov"]
   p.rdoc_pattern  = /^(lib|CHANGELOG.rdoc|README.rdoc)/
 
-  p.development_dependencies = ["rake  >=0.8",
-                                "echoe >=3",
-                                "mocha >=0.9"]
+  p.development_dependencies += ["rake  >=0.8",
+                                 "echoe >=3.0",
+                                 "mocha >=0.9"]
 end
 
 
